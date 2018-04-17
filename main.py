@@ -1,6 +1,7 @@
 # Imports all necessary Flask modules
 from flask import Flask, request, redirect, render_template, session, flash
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 # SQL Alchemy Configuration --Standard
 app = Flask(__name__)
@@ -16,15 +17,20 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)  # Numerical id list
     btitle = db.Column(db.String(120))            # Title
     entry = db.Column(db.String(240))             # Blog post contained here
+    pub_date = db.Column(db.DateTime)             # Time stamp
 
     # Initilize Function - No clue what it does, but you need it
-    def __init__(self, btitle, entry):
+    def __init__(self, btitle, entry, pub_date = None):
         self.btitle = btitle
         self.entry = entry
+        if pub_date is None:
+            pub_date = datetime.localtimenow()
+        self.pub_date = pub_date
 
-# Query to return full list of entries
+# Query to return full list of entries by Pub date
 def getall():
-    return Task.query.all()
+    return Task.query.order_by(Task.pub_date.desc())
+
 
 # Main App Route
 @app.route('/', methods=['POST','GET'])     # Both methods needed, to filter requests
@@ -66,7 +72,8 @@ def new_post():
 def single():
     blog_id = request.args.get('id')                                            # Collects id tag
     post = Task.query.filter_by(id=blog_id).first()                             # Filters Table by id
-    return render_template("blog.html", btitle=post.btitle, entry=post.entry)   # Renders template based on individual id (Use case 1)
+    return render_template("blog.html", btitle=post.btitle, entry=post.entry, pub_date = post.pub_date)   # Renders template based on individual id (Use case 1)
+
 
 
 # I need to review what this really does....lol
