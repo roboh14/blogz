@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1><img src = "https://photos-4.dropbox.com/t/2/AACOc_wA8LLpdKjITkr2gtVWWhmiWTmwm-fBOde17_Fc_g/12/485243049/png/32x32/1/_/1/2/New%20Post.png/ENrA3fcDGHIgBygH/vE6SAywTV3RpoRjSEGsy61d6GoWv0LLkgKpskG4nUTY?preserve_transparency=1&size=2048x1536&size_mode=3" width = '273.1428px' height = '100px'></h1>
+    <br><br>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td><input type="text" name="task" value = '{{blog_title}}'/></td>
+                <td>{% if title_error %}<span class='error'>{{ title_error }}</span{% endif %}</td>
+            </tr>
+            <tr>
+               <td>Post:</td>
+               <td><textarea name = "task1" value = '{{task_name}}' rows = '4' cols = '50' ></textarea></td>
+               <td>{% if post_error %}<span class='error'>{{ post_error }}</span>{% endif %}</td>
+            </tr>
+            
+        </table>
+            <label>
+                <p class= 'button'><input type="submit" value="Add entry"/></p>
+            </label>
+        </form>
+{% endblock %}

@@ -1,0 +1,73 @@
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: red;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 25px 250px;
+    text-decoration: none;
+    
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-image: url('http://celebwallpapers.net/wp-content/uploads/2017/11/supreme-wallpaper-bot-supreme-supreme-hd-wallpapers-louis-vuitton-wallpaper-of-louis-vuitton-wallpaper.png');
+    background-size: 426.66px 320px;
+    color: white;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
+}
+
+.posts a:hover{
+    background-color: white;
+    color: red;
+}
+
+.posts {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+hr {
+    border-color: red;
+}
+
+.p_title {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.p_entry {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+table {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.button {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
