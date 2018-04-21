@@ -24,7 +24,7 @@ class Task(db.Model):
         self.btitle = btitle
         self.entry = entry
         if pub_date is None:
-            pub_date = datetime.localtimenow()
+            pub_date = datetime.utcnow()
         self.pub_date = pub_date
 
 # Query to return full list of entries by Pub date
