@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
-        <title>{{title}}</title>
+        <title>Blogz</title>
         <style>
             .error {
                 color: red;
@@ -11,10 +11,25 @@
     </head>
 <body>
     <div class = "topnav">
-        <a href = '/new-post'>Add a Blog Entry</a><a href = '/'>Main Page</a>
+                    <a href="/login">login</a>
+                    <a href="/logout">logout</a>
+                    <a href="/">home</a>
+                    <a href="/blog">all posts</a>
+                    <a href="/new-post">new post</a>
     </div>
     <br><br><br><br><br>
 
+
+
+    {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+              <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
 
     {% block content %}
     {% endblock %}

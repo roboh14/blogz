@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<img src = "https://photos-2.dropbox.com/t/2/AAB_nrVJl9GtozLt5idAFHe3Bllp0eKW6y9tojC6vN3MDA/12/485243049/png/32x32/1/_/1/2/User%20Posts.png/ENrA3fcDGHQgBygH/BsJC57JMa3c9MetC3OnljMK4l5OPYXJgVtBzraYMv8M?preserve_transparency=1&size=2048x1536&size_mode=3" width = "273.1428px" height = "100px">
+
+
+        
+        {% for y in entries %}
+        <div class="post">
+
+          <a href="/blog?id={{y.id}}">{{ y.title }}</a>
+          <p class="body-text">{{ y.body }}</p>
+          <p class="pub-date">Posted on: {{ y.pub_date }}</p>
+          <p class="user">Posted by: <a href="/blog?userid={{y.owner_id}}">{{ y.owner.username }}</a></p>
+
+        </div>
+        {% endfor %}
+
+{% endblock %}
